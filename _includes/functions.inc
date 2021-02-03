@@ -12,7 +12,7 @@ include "passwordLib.php";
 function validatelogin($email,$password) {
    global $conn;
    // Build an SQL statment that will return a record with a matching id
-   $sql = "select * from user where userEmail='$email';";
+   $sql = "select * from users where userEmail='$email';";
 	//echo $sql;
    $loginresult = mysqli_query($conn, $sql);
    $userdetails = mysqli_fetch_assoc($loginresult);

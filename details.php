@@ -15,7 +15,7 @@ if (isset($_SESSION['id'])) {
    if (isset($_POST['submit'])) {
 
       // build an sql statment to update the student details
-      $sql = "update user set userFName ='" . mysqli_real_escape_string($conn,$_POST['txtfirstname']) . "',";
+      $sql = "update users set userFName ='" . mysqli_real_escape_string($conn,$_POST['txtfirstname']) . "',";
       $sql .= "userLName ='" . mysqli_real_escape_string($conn,$_POST['txtlastname'])  . "',";
       $sql .= "userAge ='" . mysqli_real_escape_string($conn,$_POST['txtage'])  . "',";
       $sql .= "userBirth ='" . mysqli_real_escape_string($conn,$_POST['txtbirth'])  . "',";
@@ -32,7 +32,7 @@ if (isset($_SESSION['id'])) {
    else {
       // Build a SQL statment to return the student record with the id that
       // matches that of the session variable.
-      $sql = "select * from user where userID='". $_SESSION['id'] . "';";
+      $sql = "select * from users where userID='". $_SESSION['id'] . "';";
       $result = mysqli_query($conn,$sql);
       $row = mysqli_fetch_array($result);
 

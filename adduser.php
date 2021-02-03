@@ -5,6 +5,12 @@ include("_includes/dbconnect.inc");
 include("_includes/functions.inc");
 
     echo template("templates/partials/header.php");
+	
+	   // check logged in
+   if (isset($_SESSION['id'])) {
+   echo template("templates/partials/nav.php");
+   }
+   
 ?>
 
 <!-- writes the forms -->
