@@ -10,9 +10,9 @@ include("functions.inc");
 
     //builds query
     $sql = "INSERT INTO `user` (`userID`, `userEmail`, `userPassword`,
-	`orgID`, `TeachID`, `adminLV`, `userRole`, `userFName`,
+	`orgID`, `adminLV`, `userRole`, `userFName`,
 	`userLName`, `userAge`, `userBirth`, `userGender`, `userExpl`, 
-	`disability`) VALUES (NULL, '$email', '$pass', NULL, NULL, 
+	`disability`) VALUES (NULL, '$email', '$pass', NULL, 
 	'1', NULL, '$first', '$last', NULL, NULL, NULL, 
 	NULL, NULL);";
 

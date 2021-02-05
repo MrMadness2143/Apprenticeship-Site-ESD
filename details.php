@@ -9,7 +9,18 @@ include("_includes/functions.inc");
 if (isset($_SESSION['id'])) {
 
    echo template("templates/partials/header.php");
-   echo template("templates/partials/nav.php");
+    $sql = "SELECT adminLV FROM users WHERE userID = ". $_SESSION['id'];
+	$admin = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	$admin = mysqli_fetch_array($admin);
+
+    if ($admin['adminLV'] = 1){
+        echo template("templates/partials/navUser.php");
+    }else if($admin['adminLV'] = 2){
+        echo template("templates/partials/navTeach.php");
+    }else{
+        echo template("templates/partials/navAdmin.php");
+    }
+    
    
    // if the form has been submitted
    if (isset($_POST['submit'])) {
